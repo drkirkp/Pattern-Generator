@@ -12,6 +12,7 @@ body {
 canvas {
   border: 1px solid black;
   margin-top: 20px;
+  background-color: #f0f0f0; /* Light gray background for better visibility */
 }
 
 .center-button {
