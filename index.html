@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pattern Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Pattern Generator</h1>
+    <label for="color">Choose a color:</label>
+    <input type="color" id="color" name="color" value="#ff0000" /><br /><br />
+    <label for="style">Choose a style:</label>
+    <select id="style" name="style">
+      <option value="stripes">Stripes</option>
+      <option value="dots">Dots</option></select
+    ><br /><br />
+    <button onclick="generatePattern()">Generate Pattern</button>
+    <canvas id="patternCanvas" width="500" height="500"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>
