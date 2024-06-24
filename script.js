@@ -158,15 +158,47 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.fill();
   }
 
+  function generateDiamondPattern(color) {
+    const diamondSize = 40; // Size of each diamond
+
+    ctx.fillStyle = color;
+
+    for (let y = 0; y < canvas.height; y += diamondSize) {
+      for (let x = 0; x < canvas.width; x += diamondSize) {
+        drawDiamond(x, y, diamondSize / 2);
+        drawDiamond(x + diamondSize / 2, y + diamondSize / 2, diamondSize / 2);
+      }
+    }
+  }
+
+  function drawDiamond(x, y, size) {
+    ctx.beginPath();
+    ctx.moveTo(x, y - size); // Top
+    ctx.lineTo(x + size, y); // Right
+    ctx.lineTo(x, y + size); // Bottom
+    ctx.lineTo(x - size, y); // Left
+    ctx.closePath();
+    ctx.fill();
+  }
+
   window.generatePattern = function () {
     const color = document.getElementById("color").value;
 
     // Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    generatePlusSign(color);
+    generateDiamondPattern(color);
   };
 });
+
+window.generatePattern = function () {
+  const color = document.getElementById("color").value;
+
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  generatePlusSign(color);
+};
 
 window.generatePattern = function () {
   const color = document.getElementById("color").value;
@@ -199,5 +231,7 @@ window.generatePattern = function () {
       break;
     case "plusSign":
       generatePlusSign(color);
+    case "diamond":
+      generateDiamond(color);
   }
 };
