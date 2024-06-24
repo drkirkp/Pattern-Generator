@@ -8,15 +8,23 @@
   </head>
   <body>
     <h1>Pattern Generator</h1>
+    <br />
     <label for="color">Choose a color:</label>
     <input type="color" id="color" name="color" value="#ff0000" /><br /><br />
     <label for="style">Choose a style:</label>
     <select id="style" name="style">
       <option value="stripes">Stripes</option>
-      <option value="dots">Dots</option></select
+      <option value="dots">Dots</option>
+      <option value="grid">Grid</option>
+      <option value="diagonalLines">Diagonal Lines</option>
+      <option value="waves">Waves</option></select
     ><br /><br />
-    <button onclick="generatePattern()">Generate Pattern</button>
-    <canvas id="patternCanvas" width="500" height="500"></canvas>
+    <div class="container">
+      <button class="center-button" onclick="generatePattern()">
+        Generate Pattern
+      </button>
+      <canvas id="patternCanvas" width="500" height="500"></canvas>
+    </div>
 
     <script src="script.js"></script>
   </body>
